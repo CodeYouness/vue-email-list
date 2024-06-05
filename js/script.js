@@ -6,9 +6,17 @@ createApp({
             mailList: []
         }
     },
-    computed: {
+    methods: {
         mailGenerator: function () {
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            for (let i = 0; i < 10; i++) {
+                axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+                    .then((email) => {
+                        this.mailList.push(email.data.response)
+                    })
+            }
         }
+    },
+    mounted() {
+        this.mailGenerator()
     }
 }).mount('#app')

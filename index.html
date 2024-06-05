@@ -14,8 +14,8 @@
             <h1>Mail generator</h1>
         </header>
         <ul>
-            <li>
-
+            <li v-for="(mail) in mailList">
+                <p>{{ mail }}</p>
             </li>
         </ul>
     </div>

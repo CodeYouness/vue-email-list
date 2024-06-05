@@ -3,9 +3,12 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            mailList: []
         }
     },
-    methods: {
-
+    computed: {
+        mailGenerator: function () {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+        }
     }
 }).mount('#app')

@@ -16,7 +16,7 @@ createApp({
             }
         }
     },
-    mounted() {
+    created() {
         this.mailGenerator()
     }
 }).mount('#app')
